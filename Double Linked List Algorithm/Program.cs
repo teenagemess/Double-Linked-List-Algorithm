@@ -107,5 +107,18 @@ namespace Double_Linked_List_Algorithm
             current.next = current.prev;
             return true;
         }
+        public void traverse()//Traverses the list
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+            {
+                Console.WriteLine("\nRecords in the ascending ordere of " + "roll numbers are:\n");
+                Node currentNode;
+                for (currentNode = START; currentNode != null;
+                    currentNode = currentNode.next)
+                    Console.WriteLine(currentNode.rollNumber + "   " + currentNode.name + "\n");
+            }
+        }
     }
 }
