@@ -84,5 +84,28 @@ namespace Double_Linked_List_Algorithm
             //The above for loop traverses the lists. if the specified node is found then the function returns true, otherwise false.
             return (current != null);
         }
+        public bool delNode(int rollNo) //Deletes the specified node
+        {
+            Node previous, current;
+            previous = current = null;
+            if (Search(rollNo, ref previous, ref current) == false)
+                return false;
+            if (current == START) // if the first node is to be deleted
+            {
+                START = START.next;
+                if (START!= null)
+                    START.prev = null;
+                return true;
+            }
+            if (current.next == null) //if the last node is to be deleted
+            {
+                previous.next = null;
+                return true;
+            }
+            //if the node to be deleted is in between the list then the following lines of code is executed
+            previous.next = current.next;
+            current.next = current.prev;
+            return true;
+        }
     }
 }
