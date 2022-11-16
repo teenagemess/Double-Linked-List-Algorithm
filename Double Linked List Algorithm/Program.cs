@@ -60,6 +60,21 @@ namespace Double_Linked_List_Algorithm
                     return;
                 }
             }
+            /*on the execution of the above for loop, prev and
+             * current will point to those nodes
+             * between which the new node is to be inserted.*/
+            newnode.next = current;
+            newnode.prev = previous;
+
+            //if the node is to be inserted at the end of the lists.//
+            if (current == null)
+            {
+                newnode.next = null;
+                previous.next = newnode;
+                return;
+            }
+            current.prev = newnode;
+            previous.next = newnode;
         }
     }
 }
