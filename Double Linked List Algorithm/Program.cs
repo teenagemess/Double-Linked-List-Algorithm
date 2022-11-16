@@ -81,6 +81,8 @@ namespace Double_Linked_List_Algorithm
         {
             for (previous = current = START; current != null && rollNo != current.rollNumber; previous = current, current = current.next)
             { }
+            //The above for loop traverses the lists. if the specified node is found then the function returns true, otherwise false.
+            return (current != null);
         }
     }
 }
